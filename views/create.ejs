@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+<h3>Create New Student</h3>
+
+<div class="col">
+	<form
+		action="/students"
+		method="post"
+		style="margin-left: 50px; margin-right: 50px"
+	>
+		<input
+			type="text"
+			class="form-control"
+			name="name"
+			placeholder="Name"
+			style="margin-bottom: 5px"
+		/>
+		<input
+			type="text"
+			class="form-control"
+			name="level"
+			placeholder="Level"
+			style="margin-bottom: 5px"
+		/>
+		<input
+			type="text"
+			class="form-control"
+			name="subjects"
+			placeholder="Subjects"
+			style="margin-bottom: 5px"
+		/>
+		<input
+			type="text"
+			class="form-control"
+			name="image"
+			placeholder="Image"
+			style="margin-bottom: 5px"
+		/>
+		<input type="submit" value="Create" />
+	</form>
+</div>

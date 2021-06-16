@@ -1,0 +1,44 @@
+<%- include('./partials/head') %>
+<div>
+	<h3>Edit <%= student.name %>'s Profile</h3>
+</div>
+
+<form
+	action="/students/<%= student.slug %>?_method=PATCH"
+	method="post"
+	style="margin-left: 50px; margin-right: 50px"
+>
+	<input
+		type="text"
+		name="name"
+		placeholder="Name"
+		class="form-control"
+		value="<%= student.name %>"
+		style="margin-bottom: 5px"
+	/>
+	<input
+		type="text"
+		name="level"
+		placeholder="Level"
+		class="form-control"
+		value="<%= student.level %>"
+		style="margin-bottom: 5px"
+	/>
+	<input
+		type="text"
+		name="subjects"
+		placeholder="Subjects"
+		class="form-control"
+		value="<%= student.subjects %>"
+		style="margin-bottom: 5px"
+	/>
+	<input
+		type="text"
+		name="image"
+		placeholder="Image"
+		class="form-control"
+		value="<%= student.image %>"
+		style="margin-bottom: 5px"
+	/>
+	<input type="submit" value="Update" />
+</form>

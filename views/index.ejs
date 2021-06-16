@@ -1,0 +1,54 @@
+<%- include('./partials/head') %>
+
+<div class="row card-container" style="width: 100%" class="background">
+	<% if (students.length !== 0) { %> <% students.forEach((element, index) => {
+	%>
+	<div class="card rounded border border-yellow" style="width: 20%">
+		<div class="card-header"></div>
+		<div
+			class="card-image"
+			style="background-image: url('<%= element.image %>')"
+		></div>
+		<!-- <img
+					class="card-img-top"
+					src="<%= element.image %>"
+					alt="Card image cap"
+				/> -->
+		<div class="card-body">
+			<h5 class="card-title"><%= element.name %></h5>
+			<p class="card-text"><%= element.level %></p>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item"><%= element.subjects %></li>
+		</ul>
+		<div class="card-body">
+			<a href="/students/<%= element.slug %>">
+				<button
+					type="submit"
+					class="btn btn-outline-success btn-sm btn-block"
+					style="margin-bottom: 10px"
+				>
+					View
+				</button>
+			</a>
+			<a href="/students/<%= element.slug %>/edit">
+				<button
+					type="submit"
+					class="btn btn-outline-primary btn-sm btn-block"
+					style="margin-bottom: 10px"
+				>
+					Edit
+				</button>
+			</a>
+
+			<form method="post" action="/students/<%= element.slug %>?_method=DELETE">
+				<button type="submit" class="btn btn-outline-light">Delete</button>
+			</form>
+		</div>
+	</div>
+	<% }); %> <% } else { %>
+
+	<p>No student available</p>
+
+	<% } %>
+</div>
