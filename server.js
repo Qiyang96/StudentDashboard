@@ -6,7 +6,7 @@ const students_controller = require('./controllers/students_controller');
 const homework_controller = require('./controllers/homework_controller');
 const assessments_controller = require('./controllers/assessments_controller');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
 
