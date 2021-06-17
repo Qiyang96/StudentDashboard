@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
@@ -7,7 +8,7 @@ const assessments_controller = require('./controllers/assessments_controller');
 const app = express();
 const port = 3000;
 
-const mongoURI = `mongodb://localhost:27017/studentsDatabase?readPreference=primary&appname=MongoDB%20Compass&ssl=false`;
+const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
 
 app.set('view engine', 'ejs');
 app.use(express.json());
